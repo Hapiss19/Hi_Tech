@@ -1,34 +1,23 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi-Tech | Professional Computer Service</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>IAN•TECH - Jasa Service & Penjualan Laptop</title>
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-light: #3b82f6;
-            --primary-dark: #1d4ed8;
-            --secondary: #1e40af;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --accent: #f59e0b;
-            --text: #334155;
-        }
-
+        /* CSS Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        /* Global Styles */
         body {
-            background-color: var(--light);
-            color: var(--text);
+            background-color: #f5f5f5;
+            color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         .container {
@@ -37,34 +26,77 @@
             padding: 0 20px;
         }
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
+        section {
+            padding: 60px 0;
         }
 
-        .header-content {
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-position: inside;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 24px;
+            font-weight: bold;
             display: flex;
             align-items: center;
         }
 
-        .logo i {
-            margin-right: 10px;
-            color: var(--accent);
+        .logo span {
+            color: #f39c12;
         }
 
         nav ul {
@@ -73,194 +105,73 @@
         }
 
         nav ul li {
-            margin-left: 30px;
+            margin-left: 20px;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            font-size: 1.1rem;
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            color: var(--accent);
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
+            color: #f39c12;
         }
 
         .mobile-menu {
             display: none;
-            font-size: 1.5rem;
+            font-size: 24px;
             cursor: pointer;
-            color: white;
         }
 
         /* Hero Section */
         .hero {
-            height: 90vh;
+            background: url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(37, 99, 235, 0.8), rgba(30, 64, 175, 0.9)), url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80') no-repeat center center/cover;
-            color: white;
             text-align: center;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent);
             color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
-            background-color: #e67e22;
-        }
-
-        /* Promo Banner */
-        .promo-banner {
-            background-color: var(--accent);
-            color: white;
-            padding: 15px 0;
-            text-align: center;
-            font-weight: 600;
             position: relative;
-            overflow: hidden;
+            margin-top: 60px;
         }
 
-        .promo-banner::before {
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shine 3s infinite;
+            background: rgba(0, 0, 0, 0.6);
         }
 
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background-color: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
+        .hero-content {
             position: relative;
-            display: inline-block;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 4px;
-            background: var(--accent);
-            bottom: -10px;
-            left: 25%;
-            border-radius: 2px;
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
+        .hero h1 {
+            font-size: 48px;
             margin-bottom: 20px;
-            color: var(--primary);
+            color: white;
         }
 
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .about-image:hover img {
-            transform: scale(1.05);
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
         }
 
         /* Services Section */
         .services {
-            padding: 80px 0;
-            background-color: var(--light);
+            background-color: white;
         }
 
-        .services-grid {
+        .services-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
@@ -268,41 +179,36 @@
         }
 
         .service-card {
-            background: white;
-            border-radius: 10px;
+            background: #f9f9f9;
             padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--primary);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-top-color: var(--accent);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--secondary);
+            color: #3498db;
+            font-size: 24px;
+        }
+
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #3498db;
         }
 
         /* Products Section */
         .products {
-            padding: 80px 0;
-            background-color: white;
+            background-color: #f5f5f5;
         }
 
-        .products-grid {
+        .products-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
@@ -311,30 +217,19 @@
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border: 1px solid #eee;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .product-image {
+        .product-img {
             height: 200px;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.05);
+            background: #ddd;
+            background-size: cover;
+            background-position: center;
         }
 
         .product-info {
@@ -342,339 +237,122 @@
         }
 
         .product-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary);
+            color: #2c3e50;
         }
 
-        .product-price {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 15px;
+        .price {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 20px;
+            margin: 10px 0;
         }
 
-        .product-specs {
-            margin-bottom: 15px;
+        /* Why Us Section */
+        .why-us {
+            background-color: white;
         }
 
-        .product-specs li {
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .product-specs i {
-            color: var(--primary);
-            margin-right: 8px;
-            font-size: 0.8rem;
-        }
-
-        .product-button {
-            display: block;
-            text-align: center;
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .product-button:hover {
-            background-color: var(--primary-dark);
-        }
-
-        /* Promo Section */
-        .promo {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
-            color: white;
-            text-align: center;
-        }
-
-        .promo-cards {
+        .benefits {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            gap: 20px;
             margin-top: 40px;
         }
 
-        .promo-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+        .benefit-item {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
             border-radius: 10px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .promo-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .promo-card i {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
-
-        .promo-card h3 {
-            font-size: 1.5rem;
+        .benefit-icon {
+            font-size: 40px;
+            color: #f39c12;
             margin-bottom: 15px;
         }
 
         /* Contact Section */
         .contact {
-            padding: 80px 0;
-            background-color: white;
+            background-color: #2c3e50;
+            color: white;
         }
 
-        .contact-content {
-            display: flex;
-            gap: 50px;
-            margin-top: 40px;
+        .contact h2 {
+            color: white;
         }
 
         .contact-info {
-            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .contact-card {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--accent);
-        }
-
-        .contact-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .contact-method i {
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-right: 15px;
-            width: 30px;
             text-align: center;
-        }
-
-        .contact-method a {
-            color: var(--dark);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .contact-method a:hover {
-            color: var(--accent);
-        }
-
-        .contact-form {
-            flex: 1;
-            background: var(--light);
             padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--primary);
         }
 
-        .form-group {
+        .contact-icon {
+            font-size: 40px;
             margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
+            color: #f39c12;
         }
 
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background: #1a252f;
             color: white;
-            padding: 50px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
-            bottom: 0;
-            left: 0;
-        }
-
-        .footer-column p {
-            margin-bottom: 15px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
         }
 
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            z-index: 99;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .contact-content {
-                flex-direction: column;
-            }
-        }
-
+        /* Responsive Styles */
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: var(--primary-dark);
+            .header-container {
                 flex-direction: column;
-                padding: 20px 0;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                flex-direction: column;
                 align-items: center;
             }
-            
-            nav ul.show {
-                display: flex;
-            }
-            
+
             nav ul li {
                 margin: 10px 0;
             }
-            
+
             .mobile-menu {
                 display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
             }
-            
+
+            nav {
+                display: none;
+                width: 100%;
+            }
+
+            nav.active {
+                display: block;
+            }
+
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
             }
         }
 
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .logo {
-                font-size: 1.5rem;
-            }
-        }
-
-        /* Animations */
+        /* Animation */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -690,310 +368,227 @@
             animation: fadeIn 1s ease forwards;
         }
 
-        .delay-1 {
-            animation-delay: 0.2s;
+        /* Testimonials */
+        .testimonials {
+            background-color: #f5f5f5;
         }
 
-        .delay-2 {
-            animation-delay: 0.4s;
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
         }
 
-        .delay-3 {
-            animation-delay: 0.6s;
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+        }
+
+        .testimonial-nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .testimonial-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .testimonial-dot.active {
+            background: #3498db;
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="container header-content">
+        <div class="container header-container">
             <div class="logo">
-                <i class="fas fa-laptop-medical"></i>
-                <span>Hi-Tech Service</span>
+                IAN<span>•TECH</span>
             </div>
+            <div class="mobile-menu">☰</div>
             <nav>
-                <ul id="navMenu">
+                <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#promo">Promo</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#why-us">Kenapa Kami</a></li>
+                    <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
-            <div class="mobile-menu" id="mobileMenu">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
     </header>
 
-    <!-- Promo Banner -->
-    <div class="promo-banner">
-        <p>FREE PICKUP & DELIVERY • FREE CONSULTATION • FREE DAMAGE CHECK</p>
-    </div>
-
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content fade-in">
-            <h1>Professional Computer Repair Service</h1>
-            <p>Fast, reliable, and affordable computer repair services with professional technicians and quality parts.</p>
-            <a href="https://wa.me/6281328717886" class="cta-button" target="_blank"><i class="fab fa-whatsapp"></i> Contact Now</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Tentang Kami</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text fade-in delay-1">
-                    <h3>Mengapa Memilih Hi-Tech?</h3>
-                    <p>Hi-Tech adalah penyedia jasa service komputer profesional dengan pengalaman dalam menangani berbagai masalah komputer dan laptop. Kami berkomitmen untuk memberikan solusi terbaik dengan harga terjangkau.</p>
-                    <p>Tim teknisi kami yang berpengalaman siap membantu memperbaiki berbagai kerusakan, mulai dari hardware hingga software, dengan garansi resmi untuk setiap perbaikan.</p>
-                    <ul style="list-style-type: none; margin-top: 20px;">
-                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Teknisi berpengalaman & bersertifikat</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Garansi resmi untuk setiap perbaikan</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--accent); margin-right: 10px;"></i> Harga transparan & kompetitif</li>
-                    </ul>
-                </div>
-                <div class="about-image fade-in delay-2">
-                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Teknisi Hi-Tech">
-                </div>
-            </div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>JASA SERVICE & PENJUALAN LAPTOP</h1>
+            <p>CEPAT, RAMAH, BERKUALITAS</p>
+            <a href="#contact" class="btn">Hubungi Kami</a>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="services">
+    <section id="services" class="services">
         <div class="container">
-            <div class="section-title fade-in">
-                <h2>Our Services</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card fade-in delay-1">
-                    <div class="service-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3>Computer Repair</h3>
-                    <p>Comprehensive repair services for desktops and laptops including motherboard, RAM, HDD/SSD, and power issues.</p>
+            <h2 class="text-center">🔧 Jasa Maintenance & Service</h2>
+            <div class="services-container">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Perbaikan Laptop & Komputer</h3>
+                    <p>Perbaikan laptop, komputer, dan printer semua merk dengan teknisi berpengalaman.</p>
                 </div>
-                <div class="service-card fade-in delay-2">
-                    <div class="service-icon">
-                        <i class="fas fa-virus"></i>
-                    </div>
-                    <h3>Virus Removal</h3>
-                    <p>Thorough virus and malware removal with data protection and system optimization.</p>
+                <div class="service-card fade-in">
+                    <div class="service-icon">💿</div>
+                    <h3>Instal Ulang Windows</h3>
+                    <p>Instal ulang Windows + software lengkap siap pakai untuk kebutuhan kerja dan bisnis.</p>
                 </div>
-                <div class="service-card fade-in delay-3">
-                    <div class="service-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Data Recovery</h3>
-                    <p>Professional data recovery services for accidentally deleted or corrupted files from any storage device.</p>
-                </div>
-                <div class="service-card fade-in delay-1">
-                    <div class="service-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <h3>Performance Upgrade</h3>
-                    <p>Upgrade your computer's performance with SSD installation, RAM upgrade, and system optimization.</p>
-                </div>
-                <div class="service-card fade-in delay-2">
-                    <div class="service-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>Networking</h3>
-                    <p>Network setup, troubleshooting, and maintenance for home and small business.</p>
-                </div>
-                <div class="service-card fade-in delay-3">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <h3>Laptop Screen Replacement</h3>
-                    <p>High-quality LCD screen replacement with warranty for all laptop brands.</p>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🚀</div>
+                    <h3>Upgrade RAM & SSD</h3>
+                    <p>Upgrade RAM & SSD biar laptop makin ngebut dengan harga terjangkau.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section class="products" id="products">
+    <section id="products" class="products">
         <div class="container">
-            <div class="section-title fade-in">
-                <h2>Our Laptop Products</h2>
-                <p>High quality laptops with competitive prices</p>
-            </div>
-            <div class="products-grid">
-                <div class="product-card fade-in delay-1">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="MacBook Pro M1">
-                    </div>
+            <h2 class="text-center">💻 Jual Laptop Bekas – Barang Seperti Baru!</h2>
+            <div class="products-container">
+                <div class="product-card fade-in">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
                     <div class="product-info">
-                        <h3>MacBook Pro M1 13"</h3>
-                        <div class="product-price">Rp 15.999.000</div>
-                        <ul class="product-specs">
-                            <li><i class="fas fa-microchip"></i> Apple M1 Chip 8-core</li>
-                            <li><i class="fas fa-memory"></i> 8GB Unified Memory</li>
-                            <li><i class="fas fa-hdd"></i> 256GB SSD Storage</li>
-                            <li><i class="fas fa-tv"></i> 13.3" Retina Display</li>
-                            <li><i class="fas fa-battery-full"></i> Up to 20 hours battery</li>
-                        </ul>
-                        <a href="https://wa.me/6281328717886?text=Saya%20tertarik%20dengan%20MacBook%20Pro%20M1%2013" class="product-button" target="_blank">Order Now</a>
+                        <h3>Laptop Gaming</h3>
+                        <p>Kondisi mulus 98%, performa maksimal untuk gaming dan desain grafis.</p>
+                        <div class="price">Rp 7.500.000</div>
+                        <a href="#contact" class="btn">Beli Sekarang</a>
                     </div>
                 </div>
-                
-                <div class="product-card fade-in delay-2">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Dell XPS 15">
-                    </div>
+                <div class="product-card fade-in">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
                     <div class="product-info">
-                        <h3>Dell XPS 15 9520</h3>
-                        <div class="product-price">Rp 22.500.000</div>
-                        <ul class="product-specs">
-                            <li><i class="fas fa-microchip"></i> Intel Core i7-12700H</li>
-                            <li><i class="fas fa-memory"></i> 16GB DDR5 RAM</li>
-                            <li><i class="fas fa-hdd"></i> 512GB NVMe SSD</li>
-                            <li><i class="fas fa-tv"></i> 15.6" 4K UHD+ Touch</li>
-                            <li><i class="fas fa-battery-full"></i> NVIDIA RTX 3050 Ti</li>
-                        </ul>
-                        <a href="https://wa.me/6281328717886?text=Saya%20tertarik%20dengan%20Dell%20XPS%2015%209520" class="product-button" target="_blank">Order Now</a>
+                        <h3>Laptop Kantor</h3>
+                        <p>Ringan dan cepat, cocok untuk pekerjaan kantoran dan kuliah.</p>
+                        <div class="price">Rp 4.200.000</div>
+                        <a href="#contact" class="btn">Beli Sekarang</a>
                     </div>
                 </div>
-                
-                <div class="product-card fade-in delay-3">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="ASUS ROG Zephyrus">
-                    </div>
+                <div class="product-card fade-in">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
                     <div class="product-info">
-                        <h3>ASUS ROG Zephyrus G14</h3>
-                        <div class="product-price">Rp 18.750.000</div>
-                        <ul class="product-specs">
-                            <li><i class="fas fa-microchip"></i> AMD Ryzen 7 5800HS</li>
-                            <li><i class="fas fa-memory"></i> 16GB DDR4 RAM</li>
-                            <li><i class="fas fa-hdd"></i> 1TB NVMe SSD</li>
-                            <li><i class="fas fa-tv"></i> 14" WQHD 120Hz</li>
-                            <li><i class="fas fa-battery-full"></i> NVIDIA RTX 3060</li>
-                        </ul>
-                        <a href="https://wa.me/6281328717886?text=Saya%20tertarik%20dengan%20ASUS%20ROG%20Zephyrus%20G14" class="product-button" target="_blank">Order Now</a>
-                    </div>
-                </div>
-                
-                <div class="product-card fade-in delay-1">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Lenovo ThinkPad X1">
-                    </div>
-                    <div class="product-info">
-                        <h3>Lenovo ThinkPad X1 Carbon</h3>
-                        <div class="product-price">Rp 19.999.000</div>
-                        <ul class="product-specs">
-                            <li><i class="fas fa-microchip"></i> Intel Core i7-1165G7</li>
-                            <li><i class="fas fa-memory"></i> 16GB LPDDR4X RAM</li>
-                            <li><i class="fas fa-hdd"></i> 512GB PCIe SSD</li>
-                            <li><i class="fas fa-tv"></i> 14" WUXGA IPS</li>
-                            <li><i class="fas fa-battery-full"></i> Up to 15 hours battery</li>
-                        </ul>
-                        <a href="https://wa.me/6281328717886?text=Saya%20tertarik%20dengan%20Lenovo%20ThinkPad%20X1%20Carbon" class="product-button" target="_blank">Order Now</a>
+                        <h3>Laptop Premium</h3>
+                        <p>Desain elegan dengan performa tinggi untuk profesional.</p>
+                        <div class="price">Rp 9.800.000</div>
+                        <a href="#contact" class="btn">Beli Sekarang</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Promo Section -->
-    <section class="promo" id="promo">
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us">
         <div class="container">
-            <div class="section-title fade-in">
-                <h2 style="color: white;">Our Special Offers</h2>
+            <h2 class="text-center">Kenapa pilih kami?</h2>
+            <div class="benefits">
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">✅</div>
+                    <h3>Barang & Jasa Berkualitas</h3>
+                    <p>Kami hanya menyediakan produk dan layanan terbaik untuk kepuasan pelanggan.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">💵</div>
+                    <h3>Harga Jujur</h3>
+                    <p>Tanpa tipu-tipu, harga bersahabat dengan kualitas terjamin.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">🚚</div>
+                    <h3>Bisa COD</h3>
+                    <p>Transaksi lebih aman dengan sistem COD (Cash On Delivery).</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">😊</div>
+                    <h3>Pelayanan Ramah</h3>
+                    <p>Tim kami siap membantu dengan ramah dan responsif.</p>
+                </div>
             </div>
-            <div class="promo-cards">
-                <div class="promo-card fade-in delay-1">
-                    <i class="fas fa-car"></i>
-                    <h3>Free Pickup & Delivery</h3>
-                    <p>We'll pick up and deliver your device for free within our service area.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="text-center">Apa Kata Pelanggan Kami?</h2>
+            <div class="testimonial-container">
+                <div class="testimonial active">
+                    <p class="testimonial-text">"Laptop yang saya beli kondisi seperti baru, performa bagus dan harga terjangkau. Pelayanannya juga ramah!"</p>
+                    <p class="testimonial-author">- Budi, Mahasiswa</p>
                 </div>
-                <div class="promo-card fade-in delay-2">
-                    <i class="fas fa-comments"></i>
-                    <h3>Free Consultation</h3>
-                    <p>Get free technical advice from our experts before any repair.</p>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Service laptop cepat selesai dan bergaransi. Sekarang laptop saya bisa dipakai kerja lagi. Terima kasih IAN•TECH!"</p>
+                    <p class="testimonial-author">- Ani, Freelancer</p>
                 </div>
-                <div class="promo-card fade-in delay-3">
-                    <i class="fas fa-search"></i>
-                    <h3>Free Damage Check</h3>
-                    <p>Comprehensive diagnostic service to identify all issues at no cost.</p>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Upgrade SSD di sini worth it banget, laptop lama jadi secepat baru. Recommended!"</p>
+                    <p class="testimonial-author">- Rudi, Wiraswasta</p>
                 </div>
+            </div>
+            <div class="testimonial-nav">
+                <span class="testimonial-dot active" data-index="0"></span>
+                <span class="testimonial-dot" data-index="1"></span>
+                <span class="testimonial-dot" data-index="2"></span>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="section-title fade-in">
-                <h2>Hubungi Kami</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info fade-in delay-1">
-                    <div class="contact-card">
-                        <h3>Contact Information</h3>
-                        <div class="contact-method">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <p>Jl. Majapahit Stand PasarKliwon no 18</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <a href="mailto:info@hitechservice.com">info@hitechservice.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fab fa-whatsapp"></i>
-                            <div>
-                                <a href="https://wa.me/6281328717886" target="_blank">0813-2871-7886</a>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fab fa-instagram"></i>
-                            <div>
-                                <a href="https://www.instagram.com/hi_tech29.store" target="_blank">@hi_tech29.store</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-card">
-                        <h3>Business Hours</h3>
-                        <div class="contact-method">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <p>Monday - Saturday: 8:00 AM - 4:00 PM</p>
-                                <p>Sunday: 08:00 AM - 12:00 AM</p>
-                            </div>
-                        </div>
-                    </div>
+            <h2 class="text-center">📞 Hubungi dan kunjungi sekarang</h2>
+            <div class="contact-info">
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">📱</div>
+                    <h3>WhatsApp</h3>
+                    <p>0813-2871-7886</p>
+                    <a href="https://wa.me/6281328717886" class="btn">Chat via WhatsApp</a>
                 </div>
-                <div class="contact-form fade-in delay-2">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="cta-button">Send Message</button>
-                    </form>
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">📷</div>
+                    <h3>Instagram</h3>
+                    <p>HI_Tech.Store</p>
+                    <a href="https://instagram.com/HI_Tech.Store" class="btn">Kunjungi Instagram</a>
+                </div>
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">🏪</div>
+                    <h3>Lokasi Toko</h3>
+                    <p>Jl. Teknologi No. 123, Kota Anda</p>
+                    <a href="#" class="btn">Lihat di Maps</a>
                 </div>
             </div>
         </div>
@@ -1002,122 +597,78 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>About Hi-Tech</h3>
-                    <p>Professional computer repair service with certified technicians and quality parts. We provide reliable solutions for all your computer problems.</p>
-                    <div class="social-links">
-                        <a href="https://wa.me/6281328717886" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.instagram.com/hi_tech29.store" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Our Services</h3>
-                    <ul>
-                        <li><a href="#">Computer & Laptop Repair</a></li>
-                        <li><a href="#">Virus & Malware Removal</a></li>
-                        <li><a href="#">Data Recovery</a></li>
-                        <li><a href="#">Hardware Upgrade</a></li>
-                        <li><a href="#">Networking Solutions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#promo">Promo</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Hi-Tech Computer Service. All Rights Reserved.</p>
-            </div>
+            <p>&copy; 2023 IAN•TECH - Jasa Service & Penjualan Laptop. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/6281328717886" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <script>
         // Mobile Menu Toggle
-        document.getElementById('mobileMenu').addEventListener('click', function() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('show');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('nav');
+
+        mobileMenu.addEventListener('click', () => {
+            nav.classList.toggle('active');
         });
 
-        // Smooth Scrolling
+        // Smooth Scrolling for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+                nav.classList.remove('active');
                 
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (window.innerWidth <= 768) {
-                        document.getElementById('navMenu').classList.remove('show');
-                    }
-                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
-        // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Testimonial Slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
             
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send the data to a server
-            // For this example, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been sent. We will contact you soon via email (${email}) or phone (${phone}).`);
-            
-            // Reset form
-            this.reset();
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                showTestimonial(parseInt(this.getAttribute('data-index')));
+            });
         });
 
-        // Animation on scroll
+        // Auto rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Scroll Animation
         const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
+
+        function checkScroll() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
                 }
             });
-        }, {
-            threshold: 0.1
-        });
+        }
 
-        fadeElements.forEach(element => {
-            observer.observe(element);
-            element.style.opacity = 0;
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
+        // Initial check
+        checkScroll();
 
-        // WhatsApp button click event
-        document.querySelector('.whatsapp-float').addEventListener('click', function() {
-            // This will open WhatsApp in a new tab (handled by href)
-        });
+        // Check on scroll
+        window.addEventListener('scroll', checkScroll);
     </script>
 </body>
 </html>
